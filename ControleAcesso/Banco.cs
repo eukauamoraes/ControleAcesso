@@ -1,8 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TDSQueueClass
+namespace ControleAceso
 {
-    public static class Banco // 
+    public static class Banco //
     {
         /// <summary>
         /// Abre uma conexão com o banco de dados
@@ -11,7 +16,7 @@ namespace TDSQueueClass
         public static MySqlCommand Abrir()
         {
             MySqlCommand cmd = new();
-            string strConn = @"server=localhost;database=tdsqueuedb01;user=root;password=";
+            string strConn = @"server=localhost;database=ControleAcesso;user=root;password=";
 
             // string strConn = @"server=127.0.0.1;database=tdsqueuedb01;user=root;password=" // meu servidor local
             MySqlConnection cn = new(strConn);

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ControleAceso.UI
 {
-    public partial class ResgistrodeAcesso: Form
+    public partial class ResgistrodeAcesso : Form
     {
         public ResgistrodeAcesso()
         {
             InitializeComponent();
+        }
+
+        private void ResgistrodeAcesso_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using ControleAceso;
+﻿using ControleAcesso.Core;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -8,19 +8,19 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleAcesso
+namespace ControleAcesso.Core
 {
     public class Usuario
     {
         public int Id { get; set; }
 
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
 
-        public string Cpf { get; set; }
+        public string? Cpf { get; set; }
 
-        public string TipoUsuario { get; set; }
+        public string? TipoUsuario { get; set; }
 
-        public string Senha { get; set; }
+        public string? Senha { get; set; }
         public bool Ativo { get; set; }
 
 
@@ -57,16 +57,18 @@ namespace ControleAcesso
             Nome = nome;
         }
         //metodos da classe
-          public static Usuario ObterPorId(int id)
+        public static Usuario ObterPorId(int id)
         {
             Usuario usuario = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from usuarios where id = {id}";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read()) 
+            cmd.CommandText = $"SELECT * FROM usuarios WHERE id = {id}";
+
+            using (var dr = cmd.ExecuteReader())
             {
-                usuario = new(
+                if (dr.Read())
+                {
+                    usuario = new(
                         dr.GetInt32(0),
                         dr.GetString(1),
                         dr.GetString(2),
@@ -74,7 +76,9 @@ namespace ControleAcesso
                         dr.GetString(4),
                         dr.GetBoolean(5)
                     );
+                }
             }
+
             return usuario;
         }
 
@@ -148,21 +152,36 @@ namespace ControleAcesso
             Usuario usuario = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * from usuarios where nome = @nome and senha = md5(@senha)";
-            cmd.Parameters.AddWithValue("@nome",nome);
+            cmd.CommandText = "SELECT * FROM usuarios WHERE nome = @nome AND senha = MD5(@senha)";
+            cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@senha", senha);
-            var dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                usuario.Id = dr.GetInt32(0);
-                usuario.Nome = dr.GetString(1);
-                usuario.Cpf = dr.GetString(2);
-                usuario.TipoUsuario = dr.GetString(4);
-                usuario.Ativo = dr.GetBoolean(5);
 
+            using (var dr = cmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    usuario.Id = dr.GetInt32(0);
+                    usuario.Nome = dr.GetString(1);
+                    usuario.Cpf = dr.GetString(2);
+                    usuario.TipoUsuario = dr.GetString(4);
+                    usuario.Ativo = dr.GetBoolean(5);
+                }
             }
 
             return usuario;
+        }
+
+        
+        public void ValidarLogin()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"insert usuarios (nome, email, senha, ativo) " +
+                $"values ('{Nome}','{Cpf}',md5('{TipoUsuario}'), default)";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "select last_insert_id()";
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            //ncessario para validar Login
         }
 
     }

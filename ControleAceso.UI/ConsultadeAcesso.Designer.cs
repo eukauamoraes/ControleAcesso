@@ -101,10 +101,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.Location = new Point(148, 47);
             label4.Name = "label4";
-            label4.Size = new Size(150, 18);
+            label4.Size = new Size(134, 20);
             label4.TabIndex = 14;
             label4.Text = "Consultar Acesso";
             // 
@@ -140,6 +140,7 @@
             Controls.Add(dataGridView1);
             Name = "ResgistrodeAcesso";
             Text = "ResgistrodeAcesso";
+            Load += ResgistrodeAcesso_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

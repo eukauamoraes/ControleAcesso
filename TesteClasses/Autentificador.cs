@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleAcesso
+namespace ControleAcesso.Core
 {
-    class Autentificador
+    public class Autentificador
     {
-        public bool ValidarLogin(string cpf, string senha) {
+        public bool ValidarLogin(string cpf, string senha) 
+        {
             return true;
         }
 

@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUsuario = new TextBox();
+            txtSenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
             label4 = new Label();
+            btnEntrar = new Button();
+            btnCadastro = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(298, 138);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(196, 23);
-            textBox1.TabIndex = 0;
+            txtUsuario.Location = new Point(298, 141);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(196, 23);
+            txtUsuario.TabIndex = 0;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
-            // textBox2
+            // txtSenha
             // 
-            textBox2.Location = new Point(298, 192);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(196, 23);
-            textBox2.TabIndex = 1;
+            txtSenha.Location = new Point(298, 192);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(196, 23);
+            txtSenha.TabIndex = 1;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // label1
             // 
@@ -69,60 +71,63 @@
             label2.TabIndex = 3;
             label2.Text = "Senha";
             // 
-            // button1
-            // 
-            button1.Location = new Point(298, 239);
-            button1.Name = "button1";
-            button1.Size = new Size(77, 25);
-            button1.TabIndex = 4;
-            button1.Text = "Entrar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(414, 239);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 25);
-            button2.TabIndex = 5;
-            button2.Text = "Cadastrar";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.Location = new Point(365, 96);
             label4.Name = "label4";
-            label4.Size = new Size(56, 18);
+            label4.Size = new Size(52, 20);
             label4.TabIndex = 14;
             label4.Text = "Login ";
+            label4.Click += label4_Click;
+            // 
+            // btnEntrar
+            // 
+            btnEntrar.Location = new Point(298, 258);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(77, 25);
+            btnEntrar.TabIndex = 4;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastro
+            // 
+            btnCadastro.Location = new Point(406, 256);
+            btnCadastro.Name = "btnCadastro";
+            btnCadastro.Size = new Size(88, 27);
+            btnCadastro.TabIndex = 15;
+            btnCadastro.Text = "Cadastro";
+            btnCadastro.UseVisualStyleBackColor = true;
+            btnCadastro.Click += btnCadastro_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCadastro);
             Controls.Add(label4);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnEntrar);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtSenha);
+            Controls.Add(txtUsuario);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtSenha;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private Button button2;
         private Label label4;
+        private Button btnEntrar;
+        private Button btnCadastro;
     }
 }

@@ -35,10 +35,10 @@
             label4 = new Label();
             textBox3 = new TextBox();
             dataGridView1 = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
             Column1 = new DataGridViewTextBoxColumn();
             Saida = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
+            dateTimePicker1 = new DateTimePicker();
             textBox4 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -103,13 +103,6 @@
             dataGridView1.Size = new Size(363, 139);
             dataGridView1.TabIndex = 17;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(524, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(264, 23);
-            dateTimePicker1.TabIndex = 18;
-            // 
             // Column1
             // 
             Column1.HeaderText = "Usuario";
@@ -127,6 +120,13 @@
             Column2.HeaderText = "Saida";
             Column2.Name = "Column2";
             Column2.Width = 120;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(524, 12);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(264, 23);
+            dateTimePicker1.TabIndex = 18;
             // 
             // textBox4
             // 
@@ -152,6 +152,7 @@
             Controls.Add(label1);
             Name = "RegistrodeAcesso";
             Text = "RegistrodeAcesso";
+            Load += RegistrodeAcesso_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
