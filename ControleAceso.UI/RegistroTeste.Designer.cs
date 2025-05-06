@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
             textBox2 = new TextBox();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(243, 75);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(246, 23);
-            textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
@@ -63,7 +55,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Name = "RegistroTeste";
             Text = "RegistroTeste";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -72,8 +63,6 @@
         }
 
         #endregion
-
-        private TextBox textBox1;
         private TextBox textBox2;
         private DataGridView dataGridView1;
     }
