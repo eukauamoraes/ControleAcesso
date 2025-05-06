@@ -50,7 +50,7 @@ namespace ControleAceso.UI
 
         }
 
-       
+
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
@@ -73,9 +73,9 @@ namespace ControleAceso.UI
 
                     {
 
-                        FormCadastro formcadastrar = new();
+                        Inicial inicial = new();
 
-                        formcadastrar.Show();
+                        inicial.Show();
 
                         this.Hide();
 
@@ -101,6 +101,21 @@ namespace ControleAceso.UI
 
 
             }
+        }
+
+        private void btnCadastro_Click_1(object sender, EventArgs e)
+        {
+            FormCadastro formCadastro = new();
+
+            formCadastro.Show();
+
+            this.Hide();
+
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

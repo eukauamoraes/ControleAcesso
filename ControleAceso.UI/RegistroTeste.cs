@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ControleAceso.UI
 {
-    public partial class RegistrodeAcesso : Form
+    public partial class RegistroTeste: Form
     {
-        public RegistrodeAcesso()
+        public RegistroTeste()
         {
             InitializeComponent();
-        }
-
-        private void RegistrodeAcesso_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

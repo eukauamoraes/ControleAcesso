@@ -27,39 +27,15 @@ namespace ControleAceso.UI
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text;
-            string cpf = txtCpf.Text;
-            string senha = txtSenha.Text;
+            Usuario usuario = new(txtNome.Text, txtCpf.Text, cmbTipo.Text, txtSenha.Text);
+            usuario.Inserir();
+            txtId.Text = usuario.Id.ToString();
+            MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
+            FormCadastro_Load(sender, e);
 
-
-            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cpf) || string.IsNullOrWhiteSpace(senha) )
-            {
-                MessageBox.Show("Preencha todos os campos.");
-                return;
-            }
-
-            string linha = $"{nome},{cpf},{senha}";
-            string caminhoArquivo = @"C:\temp\usuarios.csv";
-
-            try
-            {
-                // Verifica se o arquivo existe; se não, cria e adiciona o cabeçalho
-                if (!File.Exists(caminhoArquivo))
-                {
-                    File.WriteAllText(caminhoArquivo, "Nome,CPF,Senha,Tipo\n");
-                }
-
-                // Adiciona a nova linha ao arquivo
-                File.AppendAllText(caminhoArquivo, linha + Environment.NewLine);
-                MessageBox.Show("Usuário salvo com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao salvar: " + ex.Message);
-            }
         }
 
-            
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -79,6 +55,16 @@ namespace ControleAceso.UI
         private void txtCpf_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+
+            login.Show();
+
+            this.Hide();
+            
         }
     }
 }

@@ -34,7 +34,7 @@
             label2 = new Label();
             label4 = new Label();
             btnEntrar = new Button();
-            btnCadastro = new Button();
+            btnSair = new Button();
             SuspendLayout();
             // 
             // txtUsuario
@@ -84,7 +84,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(298, 258);
+            btnEntrar.Location = new Point(298, 243);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(77, 25);
             btnEntrar.TabIndex = 4;
@@ -92,22 +92,22 @@
             btnEntrar.UseVisualStyleBackColor = true;
             btnEntrar.Click += btnEntrar_Click;
             // 
-            // btnCadastro
+            // btnSair
             // 
-            btnCadastro.Location = new Point(406, 256);
-            btnCadastro.Name = "btnCadastro";
-            btnCadastro.Size = new Size(88, 27);
-            btnCadastro.TabIndex = 15;
-            btnCadastro.Text = "Cadastro";
-            btnCadastro.UseVisualStyleBackColor = true;
-            btnCadastro.Click += btnCadastro_Click;
+            btnSair.Location = new Point(419, 244);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(75, 23);
+            btnSair.TabIndex = 15;
+            btnSair.Text = "Sair";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnCadastro);
+            Controls.Add(btnSair);
             Controls.Add(label4);
             Controls.Add(btnEntrar);
             Controls.Add(label2);
@@ -129,6 +129,6 @@
         private Label label2;
         private Label label4;
         private Button btnEntrar;
-        private Button btnCadastro;
+        private Button btnSair;
     }
 }

@@ -108,8 +108,8 @@ namespace ControleAcesso.Core
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"insert usuarios (nome, email, senha, ativo) " +
-                $"values ('{Nome}','{Cpf}',md5('{TipoUsuario}'), default)";
+            cmd.CommandText = $"insert usuarios (nome , cpf, tipo_usuario, senha, ativo) " +
+             $"values ('{Nome}','{Cpf}','{TipoUsuario}',md5('{Senha}'), )";
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select last_insert_id()";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
