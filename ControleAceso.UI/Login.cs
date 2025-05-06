@@ -100,7 +100,7 @@ namespace ControleAceso.UI
 
                 {
 
-                    MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
+                    MessageBox.Show("Usuario ou senha incorretos ou inexistentes!", "Erro de Login");
 
                 }
 
