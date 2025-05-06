@@ -50,25 +50,20 @@ namespace ControleAceso.UI
 
         }
 
-        private void btnEntrar_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
 
+        }
 
-
-
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
             var usuario = Usuario.EfetuarLogin(txtUsuario.Text, txtSenha.Text);
 
             if (usuario != null && usuario.Ativo)
 
             {
-
-
-
 
                 if (usuario.Id > 0)
 
