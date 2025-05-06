@@ -13,6 +13,6 @@ namespace ControleAcesso.Core
             return true;
         }
 
-        // Simulação de verificação 
+        // Simulação de verificação
     }
 }

@@ -34,7 +34,7 @@
             // 
             // btnRegistro
             // 
-            btnRegistro.Location = new Point(411, 197);
+            btnRegistro.Location = new Point(397, 197);
             btnRegistro.Name = "btnRegistro";
             btnRegistro.Size = new Size(99, 23);
             btnRegistro.TabIndex = 0;
