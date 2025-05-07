@@ -32,14 +32,17 @@ namespace ControleAceso.UI
             txtId.Text = usuario.Id.ToString();
             MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
             FormCadastro_Load(sender, e);
-
         }
+        
 
 
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            txtNome.Enabled = true;
+            txtCpf.Enabled = true;
+            txtSenha.Enabled = true;
+            
         }
 
         private void textNome_TextChanged(object sender, EventArgs e)
@@ -64,7 +67,16 @@ namespace ControleAceso.UI
             login.Show();
 
             this.Hide();
+
+        }
+
+        private void bntVoltar_Click(object sender, EventArgs e)
+        {
+            Inicial inicial = new Inicial();
+
+            inicial.Show();
             
+            this.Close();
         }
     }
 }

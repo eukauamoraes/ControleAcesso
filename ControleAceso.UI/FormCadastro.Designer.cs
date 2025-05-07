@@ -44,6 +44,7 @@
             label5 = new Label();
             cmbTipo = new ComboBox();
             btnEntrar = new Button();
+            bntVoltar = new Button();
             SuspendLayout();
             // 
             // txtNome
@@ -64,7 +65,7 @@
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(247, 228);
+            txtCpf.Location = new Point(247, 216);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(241, 23);
             txtCpf.TabIndex = 2;
@@ -72,21 +73,21 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(247, 292);
+            btnSalvar.Location = new Point(209, 292);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 23);
             btnSalvar.TabIndex = 3;
-            btnSalvar.Text = "Salvar";
+            btnSalvar.Text = "&Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(328, 292);
+            btnEditar.Location = new Point(290, 292);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 4;
-            btnEditar.Text = "Editar";
+            btnEditar.Text = "&Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
@@ -133,7 +134,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(202, 231);
+            label4.Location = new Point(209, 219);
             label4.Name = "label4";
             label4.Size = new Size(26, 15);
             label4.TabIndex = 10;
@@ -166,19 +167,30 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(413, 292);
+            btnEntrar.Location = new Point(371, 293);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(75, 23);
             btnEntrar.TabIndex = 14;
-            btnEntrar.Text = "Entrar";
+            btnEntrar.Text = "E&ntrar";
             btnEntrar.UseVisualStyleBackColor = true;
             btnEntrar.Click += btnEntrar_Click;
+            // 
+            // bntVoltar
+            // 
+            bntVoltar.Location = new Point(452, 292);
+            bntVoltar.Name = "bntVoltar";
+            bntVoltar.Size = new Size(72, 24);
+            bntVoltar.TabIndex = 15;
+            bntVoltar.Text = "&Voltar";
+            bntVoltar.UseVisualStyleBackColor = true;
+            bntVoltar.Click += bntVoltar_Click;
             // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bntVoltar);
             Controls.Add(btnEntrar);
             Controls.Add(cmbTipo);
             Controls.Add(label5);
@@ -217,5 +229,6 @@
         private Label label5;
         private ComboBox cmbTipo;
         private Button btnEntrar;
+        private Button bntVoltar;
     }
 }

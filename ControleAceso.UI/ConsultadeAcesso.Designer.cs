@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            Nome = new DataGridViewTextBoxColumn();
+            Data = new DataGridViewTextBoxColumn();
+            Tipo = new DataGridViewTextBoxColumn();
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
@@ -44,10 +47,31 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Data, Tipo });
             dataGridView1.Location = new Point(148, 239);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(407, 132);
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new Size(304, 132);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Nome
+            // 
+            Nome.Frozen = true;
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
+            // 
+            // Data
+            // 
+            Data.Frozen = true;
+            Data.HeaderText = "Data";
+            Data.Name = "Data";
+            // 
+            // Tipo
+            // 
+            Tipo.Frozen = true;
+            Tipo.HeaderText = "Tipo";
+            Tipo.Name = "Tipo";
             // 
             // label1
             // 
@@ -157,5 +181,8 @@
         private Label label4;
         private DateTimePicker dateTimePicker1;
         private TextBox textBox3;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Data;
+        private DataGridViewTextBoxColumn Tipo;
     }
 }

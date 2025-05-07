@@ -44,7 +44,7 @@
             // 
             // bntRegistros
             // 
-            bntRegistros.Location = new Point(223, 197);
+            bntRegistros.Location = new Point(227, 197);
             bntRegistros.Name = "bntRegistros";
             bntRegistros.Size = new Size(75, 23);
             bntRegistros.TabIndex = 1;

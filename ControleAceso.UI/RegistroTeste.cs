@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace ControleAceso.UI
 {
-    public partial class RegistroTeste: Form
+    public partial class RegistroTeste : Form
     {
         public RegistroTeste()
         {
             InitializeComponent();
+        }
+
+        private void bntVoltar_Click(object sender, EventArgs e)
+        {
+            Inicial inicial = new Inicial();
+
+            inicial.Show();
+
+            this.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
