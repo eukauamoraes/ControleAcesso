@@ -14,5 +14,6 @@ namespace ControleAcesso.Core
         }
 
         // Simulação de verificação
+        //testeeeee
     }
 }
